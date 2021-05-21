@@ -19,7 +19,7 @@ class User(models.Model):
     password = models.CharField(max_length = 30)
     username = models.CharField(max_length=30)
     gender = models.CharField(max_length = 30)
-    age = models.IntegerField(max_length = 30)
+    age = models.IntegerField()
 #추천 게시글
 
 class Recommend_Post(models.Model): 

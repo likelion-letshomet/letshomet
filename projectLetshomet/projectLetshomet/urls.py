@@ -19,6 +19,6 @@ from letshometApp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home'),
+    path('', mypage, name='mypage'),
 
 ]

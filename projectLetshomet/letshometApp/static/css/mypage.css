@@ -1,0 +1,81 @@
+.out_wrap {
+  background-color: #f4f5f4;
+  padding: 30px;
+  height: 100%;
+}
+.in_wrap {
+  background-color: white;
+  padding: 30px;
+  height: 100vh;
+  margin-top: 15px;
+}
+.page_title {
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(65, 63, 63);
+}
+.user_info_title {
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.user_info_nickname {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.user_info_content {
+  display: flex;
+  justify-content: space-between;
+}
+.user_info_content_column p {
+  color: gray;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.user_info_content_column div {
+  background-color: #eceff8;
+  width: 250px;
+  height: 30px;
+}
+.user_made_homet_title {
+  margin-top: 40px;
+  font-weight: 700;
+}
+.user_made_homet_content {
+  margin-top: 30px;
+}
+.user_made_homet_content li {
+  height: 35px;
+  width: 40%;
+  border-bottom: 1px solid rgb(189, 187, 187);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+.section3 {
+  margin-top: 40px;
+}
+.user_challenge_title {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.user_challenge_check_title {
+  color: gray;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+.user_challenge_content {
+  display: flex;
+  justify-content: space-between;
+}
+.user_challenge_check {
+  width: 40%;
+}
+.user_challenge_check_content_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.user_challenge_percent {
+  width: 50%;
+}
