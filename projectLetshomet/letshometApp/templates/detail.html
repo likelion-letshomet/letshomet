@@ -9,5 +9,78 @@
     <link rel="stylesheet" href='{% static "css/reset.css" %}' />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div class="detailWrapper">
+      <div class="header">
+        <div class="headerItem">
+          <img class="logo" src="../static/img/logo.png" alt="" />
+        </div>
+        <div class="headerItem menu">
+          <span class="menu">menu1</span>
+          <span class="menu">menu2</span>
+          <span class="menu">menu3</span>
+        </div>
+        <div class="headerItem profile">
+          <span class="profileBtn">내 정보</span>
+          <div class="makeHometBtn">홈트 만들러가기</div>
+          <div class="profileImg">
+            <img src="../static/img/profileImg.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="detailSec landing">
+        <div class="leftLanding">
+          <div class="userName"><span>[User Name]</span></div>
+          <div class="hometTitle"><span>최준홈트 루틴 따라하기</span></div>
+          <div class="hometDesc"><span>최준의 홈트를 모아봤습니다.</span></div>
+        </div>
+        <div class="rightLanding">
+          <div class="viewsInfo">
+            <span class="views">조회수: 4203</span>
+            <span class="pup-date">작성일: 2021-06-22</span>
+            <span class="recommendations">추천: 2404</span>
+            <span class="subscribe">구독: 102</span>
+          </div>
+          <div class="btnWrapper">
+            <button class="recommendationBtn">홈트 추천하기</button>
+            <button class="suvscribeBtn">홈트 구독하기</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="detailSec deatilItem">
+        <div class="videoWrapper">
+          <iframe
+            width="635"
+            height="500"
+            src="https://www.youtube.com/embed/GXkhdzeRJgc"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="rightContents">
+          <div class="itemLogo">
+            <img src="../static/img/logo.png" alt="" />
+          </div>
+          <div class="itemContents">
+            <div class="itemNum">
+              <span>1번</span>
+            </div>
+            <div class="itemTitle">
+              <span>[1일1준^^]최준의 힙업 홈트(애플힙 비법공개)</span>
+            </div>
+
+            <div class="itemDesc">
+              <span>애플힙 비법공개</span>
+            </div>
+          </div>
+          <div class="itemSpace"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
