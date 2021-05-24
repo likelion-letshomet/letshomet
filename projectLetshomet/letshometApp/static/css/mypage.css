@@ -3,9 +3,10 @@
   padding: 30px;
   height: 100%;
 }
+/*in wrap start*/
 .in_wrap {
   background-color: white;
-  padding: 30px;
+  padding: 35px;
   height: 100vh;
   margin-top: 15px;
 }
@@ -14,14 +15,15 @@
   font-size: 20px;
   color: rgb(65, 63, 63);
 }
+/*section1 start*/
 .user_info_title {
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 20px;
 }
 .user_info_nickname {
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .user_info_content {
   display: flex;
@@ -34,11 +36,14 @@
 }
 .user_info_content_column div {
   background-color: #eceff8;
-  width: 250px;
-  height: 30px;
+  width: 356px;
+  height: 56px;
 }
+/*section1 end*/
+
+/*section2 start*/
 .user_made_homet_title {
-  margin-top: 40px;
+  margin-top: 50px;
   font-weight: 700;
 }
 .user_made_homet_content {
@@ -52,6 +57,9 @@
   display: flex;
   align-items: center;
 }
+/*section2 end*/
+
+/*section3 start*/
 .section3 {
   margin-top: 40px;
 }
@@ -61,7 +69,7 @@
 }
 .user_challenge_check_title {
   color: gray;
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 15px;
 }
 .user_challenge_content {
@@ -74,8 +82,55 @@
 .user_challenge_check_content_row {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+button.user_challenge_check_content_column {
+  width: 170px;
+  height: 47px;
+  font-size: 15px;
+  background-color: #3c64b1;
+  border: none;
+  color: white;
+}
+div.user_challenge_check_content_column {
+  font-size: 20px;
+  font-weight: 600;
 }
 .user_challenge_percent {
-  width: 50%;
+  width: 55%;
+}
+/*section3 end*/
+.user_challenge_percent_title {
+  color: gray;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.user_challenge_percent_column {
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.user_challenge_percent_column div {
+  background-color: #97ace3;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+}
+.user_challenge_percent_column:first-child div {
+  width: 67%;
+}
+.user_challenge_percent_column:nth-child(2) div {
+  width: 82%;
+}
+.user_challenge_percent_column:last-child div {
+  width: 90%;
+}
+.user_challenge_percent_column {
+  width: 80%;
+  height: 51px;
+  background-color: #3c64b1;
 }
