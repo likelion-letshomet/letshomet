@@ -1,0 +1,137 @@
+.out_wrap {
+  background-color: #f4f5f4;
+  padding: 30px;
+  height: 100%;
+}
+/*in wrap start*/
+.in_wrap {
+  background-color: white;
+  padding: 35px;
+  height: 100vh;
+  margin-top: 15px;
+}
+.page_title {
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(65, 63, 63);
+}
+/*section1 start*/
+.user_info_title {
+  font-weight: 700;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+.user_info_nickname {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.user_info_content {
+  display: flex;
+  justify-content: space-between;
+}
+.user_info_content_column p {
+  color: gray;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.user_info_content_column div {
+  background-color: #eceff8;
+  width: 356px;
+  height: 56px;
+}
+/*section1 end*/
+
+/*section2 start*/
+.user_made_homet_title {
+  margin-top: 50px;
+  font-weight: 700;
+}
+.user_made_homet_content {
+  margin-top: 30px;
+}
+.user_made_homet_content li {
+  height: 35px;
+  width: 40%;
+  border-bottom: 1px solid rgb(189, 187, 187);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+/*section2 end*/
+
+/*section3 start*/
+.section3 {
+  margin-top: 40px;
+}
+.user_challenge_title {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.user_challenge_check_title {
+  color: gray;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.user_challenge_content {
+  display: flex;
+  justify-content: space-between;
+}
+.user_challenge_check {
+  width: 40%;
+}
+.user_challenge_check_content_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+button.user_challenge_check_content_column {
+  width: 170px;
+  height: 47px;
+  font-size: 15px;
+  background-color: #3c64b1;
+  border: none;
+  color: white;
+}
+div.user_challenge_check_content_column {
+  font-size: 20px;
+  font-weight: 600;
+}
+.user_challenge_percent {
+  width: 55%;
+}
+/*section3 end*/
+.user_challenge_percent_title {
+  color: gray;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.user_challenge_percent_column {
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.user_challenge_percent_column div {
+  background-color: #97ace3;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+}
+.user_challenge_percent_column:first-child div {
+  width: 67%;
+}
+.user_challenge_percent_column:nth-child(2) div {
+  width: 82%;
+}
+.user_challenge_percent_column:last-child div {
+  width: 90%;
+}
+.user_challenge_percent_column {
+  width: 80%;
+  height: 51px;
+  background-color: #3c64b1;
+}
+/**/

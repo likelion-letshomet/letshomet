@@ -19,9 +19,9 @@ class User(models.Model):
     password = models.CharField(max_length = 30)
     username = models.CharField(max_length=30)
     gender = models.CharField(max_length = 30)
-    age = models.IntegerField(max_length = 30)
-#추천 게시글
+    age = models.IntegerField()
 
+#추천 게시글
 class Recommend_Post(models.Model): 
     post_num = models.IntegerField(primary_key = True,auto_created=True)
     title = models.CharField(max_length = 30)
@@ -37,8 +37,8 @@ class Subscribe_Cart(models.Model):
     user = models.ForeignKey('User', on_delete=models.CASCADE)
     post_num = models.ForeignKey('Recommend_Post',on_delete=models.CASCADE)
     title = models.CharField(max_length = 30)
-#후기 게시글
 
+#후기 게시글
 class Review_Post(models.Model):
     post_num = models.IntegerField(primary_key = True,auto_created=True)
     title = models.CharField(max_length = 30)
