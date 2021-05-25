@@ -1,0 +1,64 @@
+/* start header */
+.detailWrapper {
+  width: 100%;
+  height: 400vh;
+}
+
+.header {
+  width: 100%;
+  height: 88px;
+  background-color: #f3f6fa;
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+}
+
+.headerItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  /* border: 1px solid red; */
+  margin-left: 50px;
+  width: 200px;
+}
+
+.headerItem .logo {
+  margin-left: 80px;
+  width: 150px;
+  display: block;
+}
+
+.profile {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid red; */
+  display: flex;
+}
+
+.profileImg img {
+  width: 50px;
+  height: 50px;
+}
+
+.profile span {
+  color: #3c64b1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.makeHometBtn {
+  width: 133px;
+  height: 42px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #3c64b1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
