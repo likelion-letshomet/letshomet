@@ -1,128 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    {% load static %}
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href='{% static "css/mypage.css" %}' />
-    <link rel="stylesheet" href='{% static "css/reset.css" %}' />
-    <link rel="stylesheet" href='{% static "css/header.css" %}' />
-    <title>LETSHOMET | HOME</title>
-  </head>
-  <body>
-    <div class="header">
-      <div class="headerItem">
-        <img class="logo" src="../static/img/logo.png" alt="" />
-      </div>
-      <div class="headerItem menu">
-        <span class="menu">menu1</span>
-        <span class="menu">menu2</span>
-        <span class="menu">menu3</span>
-      </div>
-      <div class="headerItem profile">
-        <span class="profileBtn">내 정보</span>
-        <div class="makeHometBtn">홈트 만들러가기</div>
-        <div class="profileImg">
-          <img src="../static/img/profileImg.png" alt="" />
+{% extends 'base.html' %} {%block content%}
+<head>
+  {% load static %} {% block extrahead %}
+  <link rel="stylesheet" href='{% static "css/mypage.css" %}' />
+  <title>LETSHOMET | MYPAGE</title>
+  {% endblock %}
+</head>
+
+<div class="out_wrap">
+  <div class="page_title">내정보</div>
+  <div class="in_wrap">
+    <section class="section1">
+      <div class="user_info_title">회원정보</div>
+      <div class="user_info_nickname">닉네임:레츠홈트</div>
+      <div class="user_info_content">
+        <div class="user_info_content_column">
+          <p>아이디</p>
+          <div></div>
+        </div>
+        <div class="user_info_content_column">
+          <p>비밀번호</p>
+          <div></div>
+        </div>
+        <div class="user_info_content_column">
+          <p>이메일</p>
+          <div></div>
         </div>
       </div>
-    </div>
-    <div class="out_wrap">
-      <div class="page_title">내정보</div>
-      <div class="in_wrap">
-        <section class="section1">
-          <div class="user_info_title">회원정보</div>
-          <div class="user_info_nickname">닉네임:레츠홈트</div>
-          <div class="user_info_content">
-            <div class="user_info_content_column">
-              <p>아이디</p>
-              <div></div>
-            </div>
-            <div class="user_info_content_column">
-              <p>비밀번호</p>
-              <div></div>
-            </div>
-            <div class="user_info_content_column">
-              <p>이메일</p>
-              <div></div>
-            </div>
-          </div>
-        </section>
-        <section class="section2">
-          <div class="user_made_homet_title">내가 작성한 홈트</div>
-          <div class="user_made_homet_content">
-            <ul>
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-              <li>5</li>
-            </ul>
-          </div>
-        </section>
-        <section class="section3">
-          <div class="user_challenge_title">내 홈트 챌린지 현황</div>
-          <div class="user_challenge_content">
-            <div class="user_challenge_check">
-              <p class="user_challenge_check_title">구독홈트</p>
-              <div class="user_challenge_check_content">
-                <div class="user_challenge_check_content_row">
-                  <div>
-                    <input type="checkbox" class="check_homet" name="check" />
-                    <input type="checkbox" class="check_homet" name="check" />
-                  </div>
-
-                  <div class="user_challenge_check_content_column">
-                    확찐자를 위한 홈트
-                  </div>
-                  <button class="user_challenge_check_content_column">
-                    현황관리
-                  </button>
-                </div>
-                <div class="user_challenge_check_content_row">
-                  <div>
-                    <input type="checkbox" class="check_homet" name="check" />
-                    <input type="checkbox" class="check_homet" name="check" />
-                  </div>
-                  <div class="user_challenge_check_content_column">
-                    확찐자를 위한 홈트
-                  </div>
-                  <button class="user_challenge_check_content_column">
-                    현황관리
-                  </button>
-                </div>
-                <div class="user_challenge_check_content_row">
-                  <div>
-                    <input type="checkbox" class="check_homet" name="check" />
-                    <input type="checkbox" class="check_homet" name="check" />
-                  </div>
-                  <div class="user_challenge_check_content_column">
-                    확찐자를 위한 홈트
-                  </div>
-                  <button class="user_challenge_check_content_column">
-                    현황관리
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="user_challenge_percent">
-              <p class="user_challenge_percent_title">완주율</p>
-              <div class="user_challenge_percent_figure">
-                <div class="user_challenge_percent_column">
-                  <div>67%</div>
-                </div>
-                <div class="user_challenge_percent_column">
-                  <div>82%</div>
-                </div>
-                <div class="user_challenge_percent_column">
-                  <div>90%</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+    </section>
+    <section class="section2">
+      <div class="user_made_homet_title">내가 작성한 홈트</div>
+      <div class="user_made_homet_content">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+        </ul>
       </div>
-    </div>
-  </body>
-</html>
+    </section>
+    <section class="section3">
+      <div class="user_challenge_title">내 홈트 챌린지 현황</div>
+      <div class="user_challenge_content">
+        <div class="user_challenge_check">
+          <p class="user_challenge_check_title">구독홈트</p>
+          <div class="user_challenge_check_content">
+            <div class="user_challenge_check_content_row">
+              <div>
+                <input type="checkbox" class="check_homet" name="check" />
+                <input type="checkbox" class="check_homet" name="check" />
+              </div>
+
+              <div class="user_challenge_check_content_column">
+                확찐자를 위한 홈트
+              </div>
+              <button class="user_challenge_check_content_column">
+                현황관리
+              </button>
+            </div>
+            <div class="user_challenge_check_content_row">
+              <div>
+                <input type="checkbox" class="check_homet" name="check" />
+                <input type="checkbox" class="check_homet" name="check" />
+              </div>
+              <div class="user_challenge_check_content_column">
+                확찐자를 위한 홈트
+              </div>
+              <button class="user_challenge_check_content_column">
+                현황관리
+              </button>
+            </div>
+            <div class="user_challenge_check_content_row">
+              <div>
+                <input type="checkbox" class="check_homet" name="check" />
+                <input type="checkbox" class="check_homet" name="check" />
+              </div>
+              <div class="user_challenge_check_content_column">
+                확찐자를 위한 홈트
+              </div>
+              <button class="user_challenge_check_content_column">
+                현황관리
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="user_challenge_percent">
+          <p class="user_challenge_percent_title">완주율</p>
+          <div class="user_challenge_percent_figure">
+            <div class="user_challenge_percent_column">
+              <div>67%</div>
+            </div>
+            <div class="user_challenge_percent_column">
+              <div>82%</div>
+            </div>
+            <div class="user_challenge_percent_column">
+              <div>90%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+{% endblock%}
