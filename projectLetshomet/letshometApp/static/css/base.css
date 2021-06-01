@@ -1,7 +1,9 @@
 /* start header */
-a {
+
+.profile a {
   text-decoration: none;
 }
+
 .baseWrapper {
   width: 100%;
   height: auto;

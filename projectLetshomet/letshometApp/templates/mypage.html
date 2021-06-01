@@ -11,18 +11,18 @@
   <div class="in_wrap">
     <section class="section1">
       <div class="user_info_title">회원정보</div>
-      <div class="user_info_nickname">닉네임:레츠홈트</div>
+      <div class="user_info_nickname">닉네임: {{user.nickname}}</div>
       <div class="user_info_content">
         <div class="user_info_content_column">
           <p>아이디</p>
-          <div></div>
-        </div>
-        <div class="user_info_content_column">
-          <p>비밀번호</p>
-          <div></div>
+          <div>{{user.username}}</div>
         </div>
         <div class="user_info_content_column">
           <p>이메일</p>
+          <div>{{user.email}}</div>
+        </div>
+        <div class="user_info_content_column">
+          <p>비밀번호</p>
           <div></div>
         </div>
       </div>

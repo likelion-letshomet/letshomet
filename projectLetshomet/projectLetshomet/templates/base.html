@@ -23,15 +23,32 @@
           <span class="menu">menu3</span>
         </div>
         <div class="headerItem profile">
+          {% if not user.is_authenticated %}
+          <a href="{% url 'login' %}">
+            <span class="profileBtn">로그인</span>
+          </a>
+          {%endif%} {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}">
+            <span class="profileBtn">로그아웃</span>
+          </a>
+          {%endif%} {% if not user.is_authenticated %}
+          <a href="{% url 'signup' %}">
+            <span class="profileBtn">회원가입</span>
+          </a>
+          {%endif%} {% if user.is_authenticated %}
           <a href="{% url 'mypage' %}">
             <span class="profileBtn">내 정보</span>
           </a>
-          <a href="{% url 'making' %}">
-            <div class="makeHometBtn">홈트 만들러가기</div>
-          </a>
+
+          {%endif%}
+          <div class="makeHometBtn">홈트 만들러가기</div>
+          {% if user.is_authenticated %}
+
           <div class="profileImg">
-            <img src="../static/img/profileImg.png" alt="" />
+            <!-- <img src="../static/img/profileImg.png" alt="" /> -->
+            <span>{{user.nickname}}님</span>
           </div>
+          {% endif %}
         </div>
       </div>
 

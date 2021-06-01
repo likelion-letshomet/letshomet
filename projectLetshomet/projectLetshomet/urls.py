@@ -22,5 +22,6 @@ urlpatterns = [
     path('', home, name='home'),
     path('detail/', detail, name='detail'),
     path('mypage', mypage, name='mypage'),
-    path('making', making, name='making'),
+    path('account/', include('account.urls')),
+
 ]
