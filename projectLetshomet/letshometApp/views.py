@@ -11,3 +11,6 @@ def detail(request):
 def mypage(request):
     return render(request, 'mypage.html')
 
+def making(request):
+    return render(request, 'making.html')
+

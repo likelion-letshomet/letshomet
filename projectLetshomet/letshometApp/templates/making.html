@@ -1,13 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    {% load static %}
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href='{% static "css/making.css" %}' />
-    <link rel="stylesheet" href='{% static "css/reset.css" %}' />
-    <title>Document</title>
-  </head>
-  <body></body>
-</html>
+{% extends 'base.html' %} {%block content%}
+<head>
+  {% load static %} {% block extrahead %}
+  <link rel="stylesheet" href='{% static "css/mypage.css" %}' />
+  <link rel="stylesheet" href='{% static "css/making.css" %}' />
+  <title>LETSHOMET | MAKING HOMET</title>
+  {% endblock %}
+</head>
+
+<div class="out_wrap">
+  <div class="page_title">홈트 제작</div>
+  <div class="in_wrap">
+    <section class="homet_title">
+      <div class="name">Title</div>
+      <input class="content" />
+    </section>
+    <section class="homet_url">
+      <div class="name">홈트 URL</div>
+      <input class="content" />
+    </section>
+    <section class="homet_url">
+      <div class="name">홈트 URL</div>
+      <input class="content" />
+    </section>
+    <section class="homet_url">
+      <div class="name">홈트 URL</div>
+      <input class="content" />
+    </section>
+    <section class="homet_description">
+      <div class="name">설명</div>
+      <input class="content" />
+    </section>
+    <section class="homet_making_end">
+      <button class="homet_making_button">홈트 만들기</button>
+    </section>
+  </div>
+</div>
+{% endblock%}
