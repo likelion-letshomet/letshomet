@@ -23,4 +23,5 @@ urlpatterns = [
     path('detail/', detail, name='detail'),
     path('mypage', mypage, name='mypage'),
     path('account/', include('account.urls')),
+    path('making',making,name='making'),
 ]

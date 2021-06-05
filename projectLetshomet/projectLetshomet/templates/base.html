@@ -36,12 +36,16 @@
             <span class="profileBtn">회원가입</span>
           </a>
           {%endif%} {% if user.is_authenticated %}
-          <a href="{% url 'mypage' %}">
+          <a href="{% url 'mypage' %}?search=true&writer={{user.nickname}}">
             <span class="profileBtn">내 정보</span>
           </a>
+
           {%endif%}
-          <div class="makeHometBtn">홈트 만들러가기</div>
+          <a href="{% url 'making'%}">
+            <div class="makeHometBtn">홈트 만들러가기</div>
+          </a>
           {% if user.is_authenticated %}
+
           <div class="profileImg">
             <!-- <img src="../static/img/profileImg.png" alt="" /> -->
             <span>{{user.nickname}}님</span>

@@ -3,9 +3,12 @@
   {% load static %} {% block extrahead %}
   <link rel="stylesheet" href='{% static "css/mypage.css" %}' />
   <title>LETSHOMET | MYPAGE</title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src='{% static "js/radiobtn.js" %}'></script>
+  <script src='{% static "js/statusControl.js" %}'></script>
   {% endblock %}
 </head>
-
+</div>
 <div class="out_wrap">
   <div class="page_title">내정보</div>
   <div class="in_wrap">
@@ -23,7 +26,7 @@
         </div>
         <div class="user_info_content_column">
           <p>비밀번호</p>
-          <div></div>
+          <input type="password" value="{{user.password}}" readonly />
         </div>
       </div>
     </section>
@@ -31,6 +34,15 @@
       <div class="user_made_homet_title">내가 작성한 홈트</div>
       <div class="user_made_homet_content">
         <ul>
+          {% for mypost in myposts%}
+          <!-- <a href="{% url 'detail' mypost.post_num%}"> -->
+          <li>{{mypost.title}}</li>
+          <!-- </a> -->
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          {% endfor%}
           <li>1</li>
           <li>2</li>
           <li>3</li>
@@ -45,42 +57,40 @@
         <div class="user_challenge_check">
           <p class="user_challenge_check_title">구독홈트</p>
           <div class="user_challenge_check_content">
+            <!-- {% for mysubscribe_post in mysubscribe_posts%} -->
             <div class="user_challenge_check_content_row">
               <div>
                 <input type="checkbox" class="check_homet" name="check" />
                 <input type="checkbox" class="check_homet" name="check" />
               </div>
-
-              <div class="user_challenge_check_content_column">
+              <!-- <a href="{% url 'detail' mysubscribe_post.post_num%}"> -->
+              <div class="user_challenge_check_content_title">
+                {{mysubscribe_post.post_title}}
+              </div>
+              <!-- </a> -->
+              <button class="user_challenge_check_content_btn" >현황관리</button>
+            </div>
+            <!-- {% endfor%} -->
+            <div class="user_challenge_check_content_row">
+              <div>
+                <input type="checkbox" class="check_homet" name="check" />
+                <input type="checkbox" class="check_homet" name="check" />
+              </div>
+              <div class="user_challenge_check_content_title">
                 확찐자를 위한 홈트
               </div>
-              <button class="user_challenge_check_content_column">
-                현황관리
-              </button>
+              <!-- popupcontent에 mysubscribe_post.post_title 인수로 전달하기 -->
+              <button class="user_challenge_check_content_btn" onclick="popupcontent('봄에 하기 좋은 운동',1);">현황관리</button>
             </div>
             <div class="user_challenge_check_content_row">
               <div>
                 <input type="checkbox" class="check_homet" name="check" />
                 <input type="checkbox" class="check_homet" name="check" />
               </div>
-              <div class="user_challenge_check_content_column">
+              <div class="user_challenge_check_content_title">
                 확찐자를 위한 홈트
               </div>
-              <button class="user_challenge_check_content_column">
-                현황관리
-              </button>
-            </div>
-            <div class="user_challenge_check_content_row">
-              <div>
-                <input type="checkbox" class="check_homet" name="check" />
-                <input type="checkbox" class="check_homet" name="check" />
-              </div>
-              <div class="user_challenge_check_content_column">
-                확찐자를 위한 홈트
-              </div>
-              <button class="user_challenge_check_content_column">
-                현황관리
-              </button>
+              <button class="user_challenge_check_content_btn" onclick="popupcontent('봄에 하기 좋은 운동',2);">현황관리</button>
             </div>
           </div>
         </div>
@@ -88,18 +98,109 @@
           <p class="user_challenge_percent_title">완주율</p>
           <div class="user_challenge_percent_figure">
             <div class="user_challenge_percent_column">
-              <div>67%</div>
+              <div id="percent1">67%</div>
             </div>
             <div class="user_challenge_percent_column">
-              <div>82%</div>
+              <div id="percent2">82%</div>
             </div>
             <div class="user_challenge_percent_column">
-              <div>90%</div>
+              <div id="percent3">90%</div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <section class="popup">
+      <div class="popup-inner">
+        <button class="close-button">&times;</button>
+        <div class="popup-title">봄에 하기 좋은 루틴</div>
+        <div class="popup-content">
+          <div class="popup-content-days">
+            <div class="popup-content-days-title">도전일수</div>
+            <div class="popup-content-days-choose">
+              <div><input type="radio" name="week" value="1week" id="week"/>1주</div>
+              <div><input type="radio" name="week" value="2week" id="week"/>2주</div>
+              <div><input type="radio" name="week" value="3week" id="week"/>3주</div>
+              <div><input type="radio" name="week" value="4week" id="week"/>4주</div>
+            </div>
+          </div>
+          <div class="popup-content-check">
+            <div class="popup-content-status-title">도전현황</div>
+            <div class="popup-content-status-choose">
+              <div class="status-check">
+                <div>
+                  <input type="checkbox" class="check_exercise" name="check" />1
+                </div>
+                <div>
+                  <input type="checkbox" class="check_exercise" name="check" />2
+                </div>
+                <div>
+                  <input type="checkbox" class="check_exercise" name="check" />3
+                </div>
+                <div>
+                  <input type="checkbox" class="check_exercise" name="check" />4
+                </div>
+                <div>
+                  <input type="checkbox" class="check_exercise" name="check" />5
+                </div>
+                <div>
+                  <input type="checkbox" class="check_exercise" name="check" />6
+                </div>
+                <div>
+                  <input type="checkbox" class="check_exercise" name="check" />7
+                </div>
+                
+              </div>
+              
+            </div>
+          </div>
+          
+          <div id="complete_percentage">50</div>
+          
+        </div>
+      </div>
+    </section>
   </div>
+
+  <script>
+    /*popup 띄우기*/
+    var popup = document.querySelector(".popup");
+    var trigger = document.querySelectorAll(
+      ".user_challenge_check_content_btn"
+    );
+    var closeButton = document.querySelector(".close-button");
+
+    function togglePopup() {
+      popup.classList.toggle("show-popup");
+    }
+    function windowOnClick(event) {
+      if (event.target === popup) {
+        togglePopup();
+      }
+    }
+    for (var i = 0; i < trigger.length; i++) {
+      trigger[i].addEventListener("click", togglePopup);
+    }
+
+    closeButton.addEventListener("click", togglePopup);
+    window.addEventListener("click", windowOnClick);
+    /*popup 띄우기*/
+
+    /* 팝업 제목*/
+    function popupcontent(title,n){//첫번째 현황관리 버튼을 누르면 percent바뀌고 팝업창 제목 바낌.
+      var popup_title = document.querySelector('.popup-title');
+      popup_title.innerHTML = title;
+      if(n == 1){
+        var div_percentage = document.getElementById('percent1');
+      var figure = document.getElementById('complete_percentage');
+      div_percentage.style.width = figure.innerHTML + '%';
+      div_percentage.innerHTML = figure.innerHTML + '%';
+      }
+
+    }
+    
+    
+  </script>
+
+  {% endblock%}
 </div>
-{% endblock%}

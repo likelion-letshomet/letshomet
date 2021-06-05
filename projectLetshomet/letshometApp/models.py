@@ -13,30 +13,34 @@ class LetsHometDb(models.Model):
     def summary(self):
         return self.body[:1]
         
-#회원
+#회원 --> email 추가
 class User(models.Model):
     id = models.CharField(max_length = 20,primary_key = True)
     password = models.CharField(max_length = 30)
     username = models.CharField(max_length=30)
-    gender = models.CharField(max_length = 30)
-    age = models.IntegerField()
+    email = models.CharField(max_length= 30,null=True)
+    gender = models.CharField(max_length = 30,null=True)
+    age = models.IntegerField(null=True)
+    
 
-#추천 게시글
+#추천 게시글 (null = True 는 오류 나는걸 막기위함)
 class Recommend_Post(models.Model): 
     post_num = models.IntegerField(primary_key = True,auto_created=True)
     title = models.CharField(max_length = 30)
     context = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
-    author = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey('User', on_delete=models.CASCADE, null=True)
     like_num = models.IntegerField()
-    image = models.ImageField() 	
+    post_url = models.CharField(max_length=500, null=True)## change imageField --> url 	
 #구독 현황 바구니 추가
 
+#*********title 외래키로 변경
 class Subscribe_Cart(models.Model):
     cart_num = models.IntegerField(primary_key = True,auto_created=True)
     user = models.ForeignKey('User', on_delete=models.CASCADE)
+    
     post_num = models.ForeignKey('Recommend_Post',on_delete=models.CASCADE)
-    title = models.CharField(max_length = 30)
+    post_title = models.ForeignKey('Recommend_Post',on_delete=models.CASCADE,related_name='%(class)s_requests_created',null=True)
 
 #후기 게시글
 class Review_Post(models.Model):
