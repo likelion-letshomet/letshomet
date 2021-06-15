@@ -12,7 +12,8 @@
   </div>
   <div class="rightLanding">
     <div class="viewsInfo">
-      <span class="views">조회수: 0</span>
+      {{post.update_counter}}
+      <span class="views">조회수: {{post.hit_num}}</span>
       <span class="pup-date">작성일: {{post.created_date}}</span>
       <span class="recommendations">추천: {{post.like_num}}</span>
       <span class="subscribe">구독: 0</span>
