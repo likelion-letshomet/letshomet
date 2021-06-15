@@ -31,7 +31,9 @@ class Recommend_Post(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey('User', on_delete=models.CASCADE, null=True)
     like_num = models.IntegerField()
-    post_url = models.CharField(max_length=500, null=True)## change imageField --> url 	
+    post_url1 = models.CharField(max_length=500, null=True)## change imageField --> url 	
+    post_url2 = models.CharField(max_length=500, null=True)## change imageField --> url 	
+    post_url3 = models.CharField(max_length=500, null=True)## change imageField --> url 	
 #구독 현황 바구니 추가
 
 #*********title 외래키로 변경
