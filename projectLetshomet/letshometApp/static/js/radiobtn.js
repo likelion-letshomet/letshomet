@@ -27,7 +27,7 @@ $(document).ready(function () {
           $(".status-check:nth-child(" + k + ")").append(
             '<div><input type="checkbox" class="check' +
               checknum +
-              '" name="check" />' +
+              '" name="check" id="daycheck"/>' +
               i +
               "</div>"
           );

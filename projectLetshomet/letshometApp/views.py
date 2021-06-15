@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Recommend_Post, Subscribe_Cart
+from .models import Recommend_Post, Subscribe_Cart, Homet_Status
 # Create your views here.
 
 def home(request):

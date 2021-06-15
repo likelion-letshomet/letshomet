@@ -42,6 +42,13 @@ class Subscribe_Cart(models.Model):
     post_num = models.ForeignKey('Recommend_Post',on_delete=models.CASCADE)
     post_title = models.ForeignKey('Recommend_Post',on_delete=models.CASCADE,related_name='%(class)s_requests_created',null=True)
 
+
+#홈트 현황관리 완주율 popup db
+class Homet_Status(models.Model):
+    subscribe_title = models.ForeignKey('Subscribe_Cart',on_delete=models.CASCADE)
+    week = models.IntegerField()
+    days = models.ImageField()
+
 #후기 게시글
 class Review_Post(models.Model):
     post_num = models.IntegerField(primary_key = True,auto_created=True)
