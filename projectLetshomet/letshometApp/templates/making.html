@@ -17,6 +17,7 @@
       enctype="multipart/form-data"
       method="POST"
     >
+      {% csrf_token %}
       <section class="homet_title">
         <div class="name">Title</div>
         <input name="title" class="content" />
