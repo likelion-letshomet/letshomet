@@ -17,99 +17,44 @@
   {% endblock %}
 </head>
 
+<body>
+
 <div class="main">
+
+  {% for home_post in home_list %}
   <div class="main_routine">
     <div class="youtube_contain">
       <div class="youtube">
-        <img class="thumbnail" src="{% static 'images/image.jpg' %}" alt="" />
+        <img class="thumbnail" src="http://img.youtube.com/vi/{{url}}/0.jpg" alt="" />
       </div>
     </div>
 
     <div class="contain">
       <div class="user_name">
-        <span class="user_name_this">[ USER NAME 1 ]</span>
+        <span class="user_name_this">[ {{home_post.author}} ]</span>
       </div>
       <div class="main_title">
-        <span class="title">홈트 루틴 제목 1</span>
+        <span class="title">{{home_post.title}}</span>
       </div>
       <div class="main_detail">
-        <span class="detail"
-          >세부 내용 1은 대충 이렇습니다. 어쩌구 저쩌구.</span
-        >
+        <span class="detail">{{home_post.context}}</span>
       </div>
       <div class="goto_routine">
-        <button type="button" class="button" onclick="location.href='/detail'">
+        <button type="button" class="button" onclick="location.href='/detail/{{home_post.post_num}}'">
           홈트 보러가기
         </button>
       </div>
     </div>
   </div>
-
-  <div class="main_routine">
-    <div class="youtube_contain">
-      <div class="youtube">
-        <img class="thumbnail" src="{% static 'images/image.jpg' %}" alt="" />
-      </div>
-    </div>
-
-    <div class="contain">
-      <div class="user_name">
-        <span class="user_name_this">[ USER NAME 2 ]</span>
-      </div>
-      <div class="main_title">
-        <span class="title">홈트 루틴 제목 2</span>
-      </div>
-      <div class="main_detail">
-        <span class="detail"
-          >세부 내용 2는 대충 이렇습니다. 어쩌구 저쩌구.</span
-        >
-      </div>
-      <div class="goto_routine">
-        <button type="button" class="button" onclick="location.href='/detail'">
-          홈트 보러가기
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="main_routine">
-    <div class="youtube_contain">
-      <div class="youtube">
-        <img class="thumbnail" src="{% static 'images/image.jpg' %}" alt="" />
-      </div>
-    </div>
-
-    <div class="contain">
-      <div class="user_name">
-        <span class="user_name_this">[ USER NAME 3 ]</span>
-      </div>
-      <div class="main_title">
-        <span class="title">홈트 루틴 제목 3</span>
-      </div>
-      <div class="main_detail">
-        <span class="detail"
-          >세부 내용 3은 대충 이렇습니다. 어쩌구 저쩌구.</span
-        >
-      </div>
-      <div class="goto_routine">
-        <button type="button" class="button" onclick="location.href='/detail'">
-          홈트 보러가기
-        </button>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
 
   <div class="more_routine_box">
     <div class="more_routine">
-      <button
-        type="button"
-        class="more_button"
-        onclick="location.href='postlist'"
-      >
-        더 많은 홈트보기
-      </button>
+      <button type="button" class="more_button" onclick="location.href='postlist'">더 많은 홈트보기</button>
     </div>
   </div>
 </div>
 
 {% endblock%}
+
+</body>
