@@ -31,7 +31,9 @@ class Recommend_Post(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey('User', on_delete=models.CASCADE, null=True)
     like_num = models.IntegerField()
-    post_url = models.CharField(max_length=500, null=True)## change imageField --> url 	
+    post_url1 = models.CharField(max_length=500, null=True)## change imageField --> url 	
+    post_url2 = models.CharField(max_length=500, null=True)## change imageField --> url 	
+    post_url3 = models.CharField(max_length=500, null=True)## change imageField --> url 	
 #구독 현황 바구니 추가
 
 #*********title 외래키로 변경
@@ -41,6 +43,13 @@ class Subscribe_Cart(models.Model):
     
     post_num = models.ForeignKey('Recommend_Post',on_delete=models.CASCADE)
     post_title = models.ForeignKey('Recommend_Post',on_delete=models.CASCADE,related_name='%(class)s_requests_created',null=True)
+
+
+#홈트 현황관리 완주율 popup db
+class Homet_Status(models.Model):
+    subscribe_title = models.ForeignKey('Subscribe_Cart',on_delete=models.CASCADE)
+    week = models.IntegerField()
+    days = models.ImageField()
 
 #후기 게시글
 class Review_Post(models.Model):

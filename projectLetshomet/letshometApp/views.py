@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
+
 from .models import Recommend_Post, Subscribe_Cart
 from django.core.paginator import Paginator
+from django.utils import timezone
 # Create your views here.
 
 def home(request):
@@ -25,4 +27,15 @@ def mypage(request):
 
 def making(request):
     return render(request, 'making.html')
-
+def create(request):
+    new_post = Recommend_Post()
+    new_post.title = request.POST['title']
+    new_post.author = request.POST['author']
+    new_post.context = request.POST['context']
+    new_post.created_date = timezone.now()
+    #post_url
+    new_post.post_url1 = request.POST['post_url1']
+    new_post.post_url2 = request.POST['post_url2']
+    new_post.post_url3 = request.POST['post_url3']
+    new_post.save()
+    return redirect('home')
