@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {%block content%}
+<head>
+  {% load static %} {% block extrahead %}
+  <link rel="stylesheet" href='{% static "css/postlist.css" %}' />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"
+  ></script>
+  <title>LETSHOMET | HOME</title>
+  {% endblock %}
+</head>
+
+<body>
+  <div class="main_wrap">
+    <div class="main">
+      <div class="main_list">
+          <table class="list_table">
+            <thead>
+              <tr class="table_head">
+                <th scope="col">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">작성자</th>
+                <th scope="col">작성일시</th>
+                <th scope="col">조회수</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table_body">
+                <td scope="row">1</td>
+                <td>
+                  <a href="detail">누구나 따라하기 쉬운 루틴</a>
+                </td>
+                <td>nickname</td>
+                <td>2021-06-15</td>
+                <td>35</td>
+              </tr>
+  
+              <tr class="table_body2">
+                <td scope="row">2</td>
+                <td>
+                  <a href="#">조금 힘들지만 효과있는 루틴</a>
+                </td>
+                <td>nickname</td>
+                <td>2021-06-15</td>
+                <td>5</td>
+              </tr>
+
+              <tr class="table_body3">
+                <td scope="row">3</td>
+                <td>
+                  <a href="#">재밌고 쉬운 루틴</a>
+                </td>
+                <td>nickname</td>
+                <td>2021-06-15</td>
+                <td>3</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+
+</body>
+
+{% endblock%}
