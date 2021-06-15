@@ -5,11 +5,16 @@ from .models import Recommend_Post, Subscribe_Cart
 from django.core.paginator import Paginator
 from django.utils import timezone
 
+from urllib.parse import urlparse, parse_qs # youtube 주소 -> id
+
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    home_post = Recommend_Post.objects
+    home_list = Recommend_Post.objects.all()[:3] # 추후 좋아요 순으로 order_by 변경
+    return render(request, 'home.html', {'home_list':home_list})
+
 
 def detail(request,id):
     post = get_object_or_404(Recommend_Post,pk=id)
