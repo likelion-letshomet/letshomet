@@ -30,10 +30,13 @@ class Recommend_Post(models.Model):
     context = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
     author = models.CharField(max_length = 30,null=True)
-    like_num = models.IntegerField(null=True)
+    like_num = models.IntegerField(default=0)
     post_url1 = models.CharField(max_length=500, null=True)## change imageField --> url 	
     post_url2 = models.CharField(max_length=500, null=True)## change imageField --> url 	
     post_url3 = models.CharField(max_length=500, null=True)## change imageField --> url 	
+
+    def __str__(self):
+            return self.title
 #구독 현황 바구니 추가
 
 #*********title 외래키로 변경

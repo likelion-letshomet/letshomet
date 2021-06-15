@@ -1,22 +1,21 @@
-{% extends 'base.html' %} {%block content%}
+{% extends 'baseForDetail.html' %} {%block content%}
 <head>
   {% load static %} {% block extrahead %}
   <link rel="stylesheet" href='{% static "css/detail.css" %}' />
   {% endblock %}
 </head>
-
 <div class="detailSec landing">
   <div class="leftLanding">
-    <div class="userName"><span>[User Name]</span></div>
-    <div class="hometTitle"><span>최준홈트 루틴 따라하기</span></div>
-    <div class="hometDesc"><span>최준의 홈트를 모아봤습니다.</span></div>
+    <div class="userName"><span>{{post.author}}님의 홈트</span></div>
+    <div class="hometTitle"><span>{{post.title}}</span></div>
+    <div class="hometDesc"><span>{{post.context}}</span></div>
   </div>
   <div class="rightLanding">
     <div class="viewsInfo">
-      <span class="views">조회수: 4203</span>
-      <span class="pup-date">작성일: 2021-06-22</span>
-      <span class="recommendations">추천: 2404</span>
-      <span class="subscribe">구독: 102</span>
+      <span class="views">조회수: 0</span>
+      <span class="pup-date">작성일: {{post.created_date}}</span>
+      <span class="recommendations">추천: {{post.like_num}}</span>
+      <span class="subscribe">구독: 0</span>
     </div>
     <div class="btnWrapper">
       <button class="recommendationBtn">홈트 추천하기</button>
@@ -30,7 +29,7 @@
     <iframe
       width="635"
       height="500"
-      src="https://www.youtube.com/embed/GXkhdzeRJgc"
+      src="https://www.youtube.com/embed/{{post.post_url1|slice:"-11:"}}"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -44,14 +43,80 @@
     </div>
     <div class="itemContents">
       <div class="itemNum">
-        <span>1번</span>
+        <span>{{post.title}} - 1번</span>
       </div>
       <div class="itemTitle">
-        <span>[1일1준^^]최준의 힙업 홈트(애플힙 비법공개)</span>
+        <span>Part1</span>
       </div>
 
       <div class="itemDesc">
-        <span>애플힙 비법공개</span>
+        <span>.</span>
+      </div>
+    </div>
+    <div class="itemSpace"></div>
+  </div>
+</div>
+
+<div class="detailSec deatilItem">
+  <div class="videoWrapper">
+    <iframe
+      width="635"
+      height="500"
+      src="https://www.youtube.com/embed/{{post.post_url2|slice:"-11:"}}"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <div class="rightContents">
+    <div class="itemLogo">
+      <img src="../static/img/logo.png" alt="" />
+    </div>
+    <div class="itemContents">
+      <div class="itemNum">
+        <span>{{post.title}} - 2번</span>
+      </div>
+      <div class="itemTitle">
+        <span>Part2</span>
+      </div>
+
+      <div class="itemDesc">
+        <span>.</span>
+      </div>
+    </div>
+    <div class="itemSpace"></div>
+  </div>
+</div>
+
+<div class="detailSec deatilItem">
+  <div class="videoWrapper">
+    <iframe
+      width="635"
+      height="500"
+      src="https://www.youtube.com/embed/{{post.post_url3|slice:"-11:"}}"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <div class="rightContents">
+    <div class="itemLogo">
+      <img src="../static/img/logo.png" alt="" />
+    </div>
+    <div class="itemContents">
+      <div class="itemNum">
+        <span>{{post.title}} - 3번</span>
+      </div>
+      <div class="itemTitle">
+        <span>Part3</span>
+      </div>
+
+      <div class="itemDesc">
+        <span>.</span>
       </div>
     </div>
     <div class="itemSpace"></div>

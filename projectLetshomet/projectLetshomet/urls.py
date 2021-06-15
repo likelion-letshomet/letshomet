@@ -20,10 +20,10 @@ from letshometApp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('detail/', detail, name='detail'),
+    path('detail/<str:id>/', detail, name='detail'),
     path('mypage', mypage, name='mypage'),
     path('account/', include('account.urls')),
     path('making',making,name='making'),
     path('create',create,name='create'),
-    path('postlist', postlist, name='postlist'),
+    path('postlist/', postlist, name='postlist'),
 ]
