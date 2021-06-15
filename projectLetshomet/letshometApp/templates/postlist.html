@@ -35,13 +35,13 @@
  
               {% for post in posts %}
               <tr class="table_body">
-                <td scope="row">{{post.post_num}}</td>
+                <td scope="row">{{forloop.counter}}</td>
                 <td>
                   <a href="{% url 'detail' post.post_num %}">{{post.title}}</a>
                 </td>
                 <td>{{post.author}}</td>
                 <td>{{post.created_date}}</td>
-                <td></td>
+                <td>{{post.hit_num}}</td>
               </tr>
               {% endfor %}
   
