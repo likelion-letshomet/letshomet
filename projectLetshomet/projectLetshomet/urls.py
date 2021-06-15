@@ -24,4 +24,5 @@ urlpatterns = [
     path('mypage', mypage, name='mypage'),
     path('account/', include('account.urls')),
     path('making',making,name='making'),
+    path('postlist', postlist, name='postlist'),
 ]
