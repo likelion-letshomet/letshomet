@@ -35,19 +35,12 @@
       <div class="user_made_homet_content">
         <ul>
           {% for mypost in myposts%}
-          <!-- <a href="{% url 'detail' mypost.post_num%}"> -->
+          <a style="text-decoration:none ;color: black; " href="{% url 'detail' mypost.post_num%}">
           <li>{{mypost.title}}</li>
-          <!-- </a> -->
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
+          </a>
+      
           {% endfor%}
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
+   
         </ul>
       </div>
     </section>
@@ -59,7 +52,7 @@
           <div class="user_challenge_check_content">
             <!-- {% for mysubscribe_post in mysubscribe_posts%} -->
             <div class="user_challenge_check_content_row">
-              <div>
+              <div style="display: none;">
                 <input type="checkbox" class="check_homet" name="check" />
                 <input type="checkbox" class="check_homet" name="check" />
               </div>
@@ -73,8 +66,8 @@
             <!-- {% endfor%} -->
             <div class="user_challenge_check_content_row">
               <div>
-                <button  class="check_homet" name="check" ></button>
-                <button class="check_homet" name="check" ></button>
+                <button style="border: none; background-color:white;" class="check_homet" name="check" >📌</button>
+                
               </div>
               <div class="user_challenge_check_content_title">
                 확찐자를 위한 홈트
@@ -84,8 +77,7 @@
             </div>
             <div class="user_challenge_check_content_row">
               <div>
-                <button  class="check_homet" name="check" ></button>
-                <button  class="check_homet" name="check" ></button>
+                <button style="border: none; background-color:white;" class="check_homet" name="check" >📌</button>
               </div>
               <div class="user_challenge_check_content_title">
                 확찐자
@@ -155,9 +147,11 @@
             </div>
           </div>
           
-          <div id="complete_percentage">50</div>
-          <button class="save_btn">저장</button>
+          <!-- <div id="complete_percentage">50</div> -->
           
+          <div class="save_btn_div">
+            <button class="save_btn">저장</button>
+          </div>
         </div>
       </div>
     </section>
