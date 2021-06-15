@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block extrahead %} {% endblock %}
+    <link rel="stylesheet" href='{% static "css/reset.css" %}' />
+    <link rel="stylesheet" href='{% static "css/base.css" %}' />
+  </head>
+  <body>
+    <div class="baseWrapper">
+      <div class="header">
+        <div class="headerItem">
+          <a href="{% url 'home' %}">
+            <img class="logo" src="../../static/img/logo.png" alt="" />
+          </a>
+        </div>
+        <div class="headerItem menu">
+          <span class="menu"></span>
+          <span class="menu"></span>
+          <span class="menu"></span>
+        </div>
+        <div class="headerItem profile">
+          {% if not user.is_authenticated %}
+          <a href="{% url 'login' %}">
+            <span class="profileBtn">로그인</span>
+          </a>
+          {%endif%} {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}">
+            <span class="profileBtn">로그아웃</span>
+          </a>
+          {%endif%} {% if not user.is_authenticated %}
+          <a href="{% url 'signup' %}">
+            <span class="profileBtn">회원가입</span>
+          </a>
+          {%endif%} {% if user.is_authenticated %}
+          <a href="{% url 'mypage' %}?search=true&writer={{user.nickname}}">
+            <span class="profileBtn">내 정보</span>
+          </a>
+
+          {%endif%}
+          <a href="{% url 'making'%}">
+            <div class="makeHometBtn">홈트 만들러가기</div>
+          </a>
+          {% if user.is_authenticated %}
+
+          <div class="profileImg">
+            <!-- <img src="../static/img/profileImg.png" alt="" /> -->
+            <span>{{user.nickname}}님</span>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="footerWrapper">
+        <span>
+          &copy; copyright all rights reserved Letshomet | 안소민 권민지 정재현
+        </span>
+      </div>
+      {%block content%} {% endblock%}
+    </div>
+  </body>
+</html>

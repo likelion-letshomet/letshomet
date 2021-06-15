@@ -11,11 +11,15 @@ from django.utils import timezone
 def home(request):
     return render(request, 'home.html')
 
-def detail(request):
-    return render(request, 'detail.html')
+def detail(request,id):
+    post = get_object_or_404(Recommend_Post,pk=id)
+    return render(request, 'detail.html', {'post':post})
 
 def postlist(request):
-    return render(request, 'postlist.html')
+    posts = Recommend_Post.objects.all()
+    return render(request, 'postlist.html', {'posts':posts})
+
+
 
 #구독 바구니에서 회원이 user와 같다면 get.
 def mypage(request):

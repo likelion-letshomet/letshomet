@@ -32,35 +32,19 @@
               </tr>
             </thead>
             <tbody>
+ 
+              {% for post in posts %}
               <tr class="table_body">
-                <td scope="row">1</td>
+                <td scope="row">{{post.post_num}}</td>
                 <td>
-                  <a href="detail">누구나 따라하기 쉬운 루틴</a>
+                  <a href="{% url 'detail' post.post_num %}">{{post.title}}</a>
                 </td>
-                <td>nickname</td>
-                <td>2021-06-15</td>
-                <td>35</td>
+                <td>{{post.author}}</td>
+                <td>{{post.created_date}}</td>
+                <td></td>
               </tr>
+              {% endfor %}
   
-              <tr class="table_body2">
-                <td scope="row">2</td>
-                <td>
-                  <a href="#">조금 힘들지만 효과있는 루틴</a>
-                </td>
-                <td>nickname</td>
-                <td>2021-06-15</td>
-                <td>5</td>
-              </tr>
-
-              <tr class="table_body3">
-                <td scope="row">3</td>
-                <td>
-                  <a href="#">재밌고 쉬운 루틴</a>
-                </td>
-                <td>nickname</td>
-                <td>2021-06-15</td>
-                <td>3</td>
-              </tr>
             </tbody>
           </table>
       </div>
