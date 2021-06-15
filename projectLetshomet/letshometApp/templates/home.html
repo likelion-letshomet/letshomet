@@ -18,43 +18,52 @@
 </head>
 
 <body>
+  <div class="main">
+    {% for home_post in home_list %}
+    <div class="main_routine">
+      <div class="youtube_contain">
+        <div class="youtube">
+          <img class="thumbnail"
+          src="http://img.youtube.com/vi/{{home_post.post_url1|slice:"-11:"}}/0.jpg"
+          alt="" />
+        </div>
+      </div>
 
-<div class="main">
-
-  {% for home_post in home_list %}
-  <div class="main_routine">
-    <div class="youtube_contain">
-      <div class="youtube">
-        <img class="thumbnail" src="http://img.youtube.com/vi/{{url}}/0.jpg" alt="" />
+      <div class="contain">
+        <div class="user_name">
+          <span class="user_name_this">[ {{home_post.author}} ]</span>
+        </div>
+        <div class="main_title">
+          <span class="title">{{home_post.title}}</span>
+        </div>
+        <div class="main_detail">
+          <span class="detail">{{home_post.context}}</span>
+        </div>
+        <div class="goto_routine">
+          <button
+            type="button"
+            class="button"
+            onclick="location.href='/detail/{{home_post.post_num}}'"
+          >
+            홈트 보러가기
+          </button>
+        </div>
       </div>
     </div>
+    {% endfor %}
 
-    <div class="contain">
-      <div class="user_name">
-        <span class="user_name_this">[ {{home_post.author}} ]</span>
-      </div>
-      <div class="main_title">
-        <span class="title">{{home_post.title}}</span>
-      </div>
-      <div class="main_detail">
-        <span class="detail">{{home_post.context}}</span>
-      </div>
-      <div class="goto_routine">
-        <button type="button" class="button" onclick="location.href='/detail/{{home_post.post_num}}'">
-          홈트 보러가기
+    <div class="more_routine_box">
+      <div class="more_routine">
+        <button
+          type="button"
+          class="more_button"
+          onclick="location.href='postlist'"
+        >
+          더 많은 홈트보기
         </button>
       </div>
     </div>
   </div>
-  {% endfor %}
 
-  <div class="more_routine_box">
-    <div class="more_routine">
-      <button type="button" class="more_button" onclick="location.href='postlist'">더 많은 홈트보기</button>
-    </div>
-  </div>
-</div>
-
-{% endblock%}
-
+  {% endblock%}
 </body>
