@@ -5,7 +5,7 @@
   <title>LETSHOMET | MYPAGE</title>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src='{% static "js/radiobtn.js" %}'></script>
-  <script src='{% static "js/statusControl.js" %}'></script>
+ 
   {% endblock %}
 </head>
 </div>
@@ -34,20 +34,15 @@
       <div class="user_made_homet_title">내가 작성한 홈트</div>
       <div class="user_made_homet_content">
         <ul>
+          
           {% for mypost in myposts%}
-          <!-- <a href="{% url 'detail' mypost.post_num%}"> -->
-          <li>{{mypost.title}}</li>
-          <!-- </a> -->
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
+           
+          <a style="text-decoration:none ;color: black; " href="{% url 'detail' mypost.post_num%}">
+          <li id="s{{ forloop.counter }}">✏️&nbsp;&nbsp;{{mypost.title}}</li>
+          </a>
+      
           {% endfor%}
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
+   
         </ul>
       </div>
     </section>
@@ -59,7 +54,7 @@
           <div class="user_challenge_check_content">
             <!-- {% for mysubscribe_post in mysubscribe_posts%} -->
             <div class="user_challenge_check_content_row">
-              <div>
+              <div style="display: none;">
                 <input type="checkbox" class="check_homet" name="check" />
                 <input type="checkbox" class="check_homet" name="check" />
               </div>
@@ -73,24 +68,32 @@
             <!-- {% endfor%} -->
             <div class="user_challenge_check_content_row">
               <div>
-                <button  class="check_homet" name="check" ></button>
-                <button class="check_homet" name="check" ></button>
+                <button style="border: none; background-color:white;" class="check_homet" name="check" >📌</button>
+                
               </div>
               <div class="user_challenge_check_content_title">
                 확찐자를 위한 홈트
               </div>
               <!-- popupcontent에 mysubscribe_post.post_title 인수로 전달하기 -->
-              <button class="user_challenge_check_content_btn" id="status_btn1" onclick="popupcontent('봄에 하기 좋은 운동',1);">현황관리</button>
+              <button class="user_challenge_check_content_btn" id="status_btn1" onclick="popupcontent('봄에 하기 좋은 운동');">현황관리</button>
             </div>
             <div class="user_challenge_check_content_row">
               <div>
-                <button  class="check_homet" name="check" ></button>
-                <button  class="check_homet" name="check" ></button>
+                <button style="border: none; background-color:white;" class="check_homet" name="check" >📌</button>
               </div>
               <div class="user_challenge_check_content_title">
                 확찐자
               </div>
-              <button class="user_challenge_check_content_btn" id="status_btn2" onclick="popupcontent('여름에 하기 좋은 운동',2);">현황관리</button>
+              <button class="user_challenge_check_content_btn" id="status_btn2" onclick="popupcontent('여름에 하기 좋은 운동');">현황관리</button>
+            </div>
+            <div class="user_challenge_check_content_row">
+              <div>
+                <button style="border: none; background-color:white;" class="check_homet" name="check" >📌</button>
+              </div>
+              <div class="user_challenge_check_content_title">
+                확자
+              </div>
+              <button class="user_challenge_check_content_btn" id="status_btn3" onclick="popupcontent('겨울에 하기 좋은 운동');">현황관리</button>
             </div>
           </div>
         </div>
@@ -98,13 +101,13 @@
           <p class="user_challenge_percent_title">완주율</p>
           <div class="user_challenge_percent_figure">
             <div class="user_challenge_percent_column">
-              <div id="percent1">67%</div>
+              <div id="percent1">0%</div>
             </div>
             <div class="user_challenge_percent_column">
-              <div id="percent2">82%</div>
+              <div id="percent2">0%</div>
             </div>
             <div class="user_challenge_percent_column">
-              <div id="percent3">90%</div>
+              <div id="percent3">0%</div>
             </div>
           </div>
         </div>
@@ -155,14 +158,16 @@
             </div>
           </div>
           
-          <div id="complete_percentage">50</div>
-          <button class="save_btn">저장</button>
+          <div id="complete_percentage"></div>
           
+          <div class="save_btn_div">
+            <button class="save_btn">저장</button>
+          </div>
         </div>
       </div>
     </section>
   </div>
-
+  <script src='{% static "js/statusControl.js" %}'></script>
   <script>
     /*popup 띄우기*/
     var popup = document.querySelector(".popup");
@@ -189,125 +194,7 @@
     
   </script>
 
-  <script>
-    let homet_status_LS1 = [];
-    let homet_status_LS2 = [];
-    let homet_status_LS3 = [];
-    const homet_LS_key1 = "hometStatus1";
-    const homet_LS_key2 = "hometStatus2";
-    function init() {
-      const savecheck_btn = document.querySelector(".save_btn");
-      const pop_title = document.querySelectorAll(".user_challenge_check_content_title");
-      const btn1 = document.querySelector("#status_btn1");
-      const btn2 = document.querySelector("#status_btn2");
-      
-      var nth = 0;
-      btn1.addEventListener("click",function(){
-        
-        var title = pop_title[0].innerText;
-        console.log(title);
-      console.log("init 함수");
-      nth = 1;
-      $("input:checkbox[name=check]").prop('checked', false); // 전체해제하기
-      $("input:radio[name=week]").prop('checked', false); // 전체해제하기
-      load(title,nth);
-      
-      })
-      btn2.addEventListener("click",function(){
-        
-        var title = pop_title[1].innerText;
-        console.log(title);
-      console.log("init 함수");
-      nth = 2;
-      $("input:checkbox[name=check]").prop('checked', false); // 전체해제하기
-      $("input:radio[name=week]").prop('checked', false); // 전체해제하기
-      load(title,nth);
-      
-      })
-      
-      //savecheck_btn.addEventListener("click", handleSubmit(homet_LS_key, title));
-      savecheck_btn.addEventListener("click", function(e) {
-         // 전체삭제
-
-         
-        handleSubmit(pop_title[nth-1].innerText,nth);
-        
-    })
-    //
-    }
-    function saveStatus(checkedweek, daycheck,title,nth) {
-      const statusObj = {
-        title: title,
-        week: checkedweek,
-        days: daycheck,
-      };
-      if(nth == 1){
-        homet_status_LS1.push(statusObj);
-      localStorage.setItem(homet_LS_key1, JSON.stringify(homet_status_LS1));
-      }
-      else{
-        homet_status_LS1.push(statusObj);
-      localStorage.setItem(homet_LS_key2, JSON.stringify(homet_status_LS1));
-      }
-      //이미 있는 title 일 때만 
-      
-      homet_status_LS1= [];
-      console.log("save 함수");
-    }
-    function paint(checkedweek, daycheck,title) {
-      if(checkedweek >0){
-      console.log("paing 함수")
-      $('input:radio[name=week]')[checkedweek-1].click();
-      $("input:radio[name=week]")[checkedweek-1].checked = true;
-      for (var i = 0; i < daycheck; i++) {
-      
-        $("input:checkbox[name=check]")[i].checked = true;
-      }
-    
-    }
-      if(checkedweek ===0){
-        $("input:checkbox[name=check]").prop('checked', false); // 전체해제하기
-      }
-      if(daycheck ===0){
-        $("input:radio[name=week]").prop('checked', false); // 전체해제하기
-      }
-    
-    }
-    
-    function handleSubmit(title,nth) {
-      console.log("handle함수");
-      if ($("input:radio[name=week]:checked")) {
-        var checkedweek = $("input:radio[name=week]:checked").val();
-        checkedweek = parseInt(checkedweek);
-      }
-      const daycheck = $("input:checkbox[name=check]:checked").length;
-      saveStatus(checkedweek, daycheck,title,nth);
-    }
-    
-    function load(title,nth) {
-      var loadedstatus = localStorage.getItem(homet_LS_key1);
-      if(nth === 1){
-        loadedstatus = localStorage.getItem(homet_LS_key1);
-      }
-      else{
-        loadedstatus = localStorage.getItem(homet_LS_key2);
-      }
-      
-      if (loadedstatus !== null) {
-        const parsed = JSON.parse(loadedstatus);
-        parsed.forEach(function (status) {
-          if (status.title === title) {
-            paint(status.week, status.days,title); /////////////////
-          }
-          else{
-            paint(0, 0,title); /////////////////
-          }
-        });
-      }
-     
-    }
-init();
-  </script>
+ 
   
   {% endblock%}
 </div>

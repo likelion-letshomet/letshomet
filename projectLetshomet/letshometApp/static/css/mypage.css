@@ -126,13 +126,13 @@ div.user_challenge_check_content_column {
   font-size: 20px;
 }
 .user_challenge_percent_column:first-child div {
-  width: 67%;
+  width: 50%;
 }
 .user_challenge_percent_column:nth-child(2) div {
-  width: 82%;
+  width: 50%;
 }
 .user_challenge_percent_column:last-child div {
-  width: 90%;
+  width: 50%;
 }
 .user_challenge_percent_column {
   width: 80%;
@@ -158,7 +158,7 @@ div.user_challenge_check_content_column {
 .popup-inner {
   background-color: white;
   width: 30%;
-  height: 250px;
+  height: 280px;
   padding: 30px;
   border-radius: 20px;
   border: 2px solid #3c64b1;
@@ -169,11 +169,12 @@ div.user_challenge_check_content_column {
 }
 .popup-content {
   margin-top: 20px;
+  height: 100%;
 }
 .popup-content-days {
   border-top: 1px solid rgb(206, 200, 200);
   padding: 20px;
-  margin-bottom: 50px;
+
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -191,6 +192,7 @@ div.user_challenge_check_content_column {
   justify-content: space-around;
   align-items: center;
   padding: 20px;
+  height: 30%;
 }
 .popup-content-status-choose {
   justify-content: space-between;
@@ -202,10 +204,22 @@ div.user_challenge_check_content_column {
 .status-check div {
   margin-right: 10px;
 }
-.complete_percentage {
+#complete_percentage {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.save_btn_div {
+  display: flex;
+  justify-content: center;
+}
+.save_btn_div button {
+  background-color: #97abe3;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
 }
 .show-popup {
   opacity: 1;
