@@ -41,7 +41,7 @@ def making(request):
     return render(request, 'making.html')
 def create(request):
     new_post = Recommend_Post()
-    new_post.post_num = request.new_post.pk##수정 부분
+    
     new_post.title = request.POST['title']
     new_post.author = request.POST['author']
     new_post.context = request.POST['context']
