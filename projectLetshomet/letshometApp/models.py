@@ -25,7 +25,7 @@ class User(models.Model):
 
 #추천 게시글 (null = True 는 오류 나는걸 막기위함)
 class Recommend_Post(models.Model): 
-    post_num = models.IntegerField(primary_key = True,auto_created=True)
+    post_num = models.IntegerField(primary_key = True,auto_created=True,null=True)
     title = models.CharField(max_length = 30)
     context = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
